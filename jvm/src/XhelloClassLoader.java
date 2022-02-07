@@ -1,5 +1,3 @@
-package com.wh.classloader;
-
 import java.io.*;
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
@@ -12,17 +10,17 @@ public class XhelloClassLoader extends ClassLoader {
 
     public static void main(String[] args) {
         readFileBytes();
-       try {
-           Class hello = new XhelloClassLoader().findClass("Hello");
-           for (Method method : hello.getDeclaredMethods()) {
-               System.out.println(hello.getSimpleName() + "." + method.getName());
-           }
-           Object object = hello.newInstance();
-           Method method = hello.getMethod("hello");
-           method.invoke(object);
-       } catch (Exception e) {
-           e.printStackTrace();
-       }
+        try {
+            Class hello = new XhelloClassLoader().findClass("Hello");
+            for (Method method : hello.getDeclaredMethods()) {
+                System.out.println(hello.getSimpleName() + "." + method.getName());
+            }
+            Object object = hello.newInstance();
+            Method method = hello.getMethod("hello");
+            method.invoke(object);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
