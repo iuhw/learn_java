@@ -15,6 +15,7 @@ public class XhelloClassLoader extends ClassLoader {
             for (Method method : hello.getDeclaredMethods()) {
                 System.out.println(hello.getSimpleName() + "." + method.getName());
             }
+
             Object object = hello.newInstance();
             Method method = hello.getMethod("hello");
             method.invoke(object);
