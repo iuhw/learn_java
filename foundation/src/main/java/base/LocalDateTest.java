@@ -1,4 +1,10 @@
-package base;/**
+package base;
+
+/**
  * @author:
- */public class LocalDateTest {
+ */
+public class LocalDateTest {
+    public static void main(String[] args) {
+        System.out.println("hhl");
+    }
 }
